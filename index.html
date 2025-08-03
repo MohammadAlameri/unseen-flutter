@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Unseen Flutter - A Deep Dive into Internals and Advanced Concepts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <div class="logo">
+                    <div class="logo-icon">📚</div>
+                </div>
+                <h1 class="title" data-en="The Unseen Flutter" data-ar="Flutter المخفي">The Unseen Flutter</h1>
+                <p class="subtitle" data-en="A Deep Dive into Internals and Advanced Concepts" data-ar="دليل شامل للمطورين المتقدمين">A Deep Dive into Internals and Advanced Concepts</p>
+                
+                <!-- Language and Theme Controls -->
+                <div class="controls">
+                    <button class="control-btn" onclick="toggleLanguage()" id="langBtn">
+                        <span data-en="عربي" data-ar="EN">عربي</span>
+                    </button>
+                    <button class="control-btn" onclick="toggleTheme()" id="themeBtn">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-icon">📖</div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-label" data-en="Parts" data-ar="أجزاء">Parts</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-number">20</div>
+                        <div class="stat-label" data-en="Chapters" data-ar="فصول">Chapters</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-number" data-en="Advanced" data-ar="متقدم">Advanced</div>
+                        <div class="stat-label" data-en="Level" data-ar="المستوى">Level</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="parts-section">
+                <h2 data-en="Book Parts" data-ar="أجزاء الكتاب">Book Parts</h2>
+                <div class="parts-grid">
+                    <div class="part-card" onclick="showPart(1)">
+                        <div class="part-icon">🔧</div>
+                        <h3 data-en="Part 1: Flutter Fundamentals" data-ar="الجزء الأول: أساسيات Flutter">Part 1: Flutter Fundamentals</h3>
+                        <p data-en="Core concepts and architecture of Flutter framework" data-ar="المفاهيم الأساسية وهندسة إطار Flutter">Core concepts and architecture of Flutter framework</p>
+                        <div class="part-chapters">
+                            <span data-en="7 chapters" data-ar="7 فصول">7 chapters</span>
+                        </div>
+                    </div>
+                    <div class="part-card" onclick="showPart(2)">
+                        <div class="part-icon">⚙️</div>
+                        <h3 data-en="Part 2: Advanced Internals" data-ar="الجزء الثاني: الآليات الداخلية المتقدمة">Part 2: Advanced Internals</h3>
+                        <p data-en="Deep dive into Flutter's internal mechanisms" data-ar="غوص عميق في الآليات الداخلية لـ Flutter">Deep dive into Flutter's internal mechanisms</p>
+                        <div class="part-chapters">
+                            <span data-en="8 chapters" data-ar="8 فصول">8 chapters</span>
+                        </div>
+                    </div>
+                    <div class="part-card" onclick="showPart(3)">
+                        <div class="part-icon">🚀</div>
+                        <h3 data-en="Part 3: Performance & Optimization" data-ar="الجزء الثالث: الأداء والتحسين">Part 3: Performance & Optimization</h3>
+                        <p data-en="Advanced techniques for optimal Flutter applications" data-ar="تقنيات متقدمة لتطبيقات Flutter المثلى">Advanced techniques for optimal Flutter applications</p>
+                        <div class="part-chapters">
+                            <span data-en="5 chapters" data-ar="5 فصول">5 chapters</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <h2 data-en="What You'll Learn" data-ar="ما ستتعلمه">What You'll Learn</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🎯</div>
+                        <h3 data-en="Deep Understanding" data-ar="فهم عميق">Deep Understanding</h3>
+                        <p data-en="Master Flutter's internal architecture and rendering pipeline" data-ar="إتقان الهندسة الداخلية وخط أنابيب العرض لـ Flutter">Master Flutter's internal architecture and rendering pipeline</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3 data-en="Performance Optimization" data-ar="تحسين الأداء">Performance Optimization</h3>
+                        <p data-en="Learn advanced techniques to build lightning-fast apps" data-ar="تعلم تقنيات متقدمة لبناء تطبيقات سريعة كالبرق">Learn advanced techniques to build lightning-fast apps</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔍</div>
+                        <h3 data-en="Debugging Mastery" data-ar="إتقان التصحيح">Debugging Mastery</h3>
+                        <p data-en="Advanced debugging and profiling techniques" data-ar="تقنيات متقدمة للتصحيح والتشخيص">Advanced debugging and profiling techniques</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🏗️</div>
+                        <h3 data-en="Custom Widgets" data-ar="العناصر المخصصة">Custom Widgets</h3>
+                        <p data-en="Build sophisticated custom widgets and animations" data-ar="بناء عناصر ورسوم متحركة مخصصة متطورة">Build sophisticated custom widgets and animations</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p data-en="© 2025 The Unseen Flutter. All rights reserved." data-ar="© ٢٠٢٥ Flutter المخفي. جميع الحقوق محفوظة.">© 2025 The Unseen Flutter. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

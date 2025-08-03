@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Structure Test</title>
+</head>
+<body>
+    <h1>Chapter Structure Test</h1>
+    <div id="test-results"></div>
+
+    <script type="module">
+        // Test the new chapter structure
+        async function testChapterStructure() {
+            const resultsDiv = document.getElementById('test-results');
+            
+            try {
+                // Import the chapter registry
+                const { getChapterContent, chapterExists, getAvailableChapterIds } = await import('./src/data/chapters/chapterRegistry.js');
+                
+                // Test English chapters
+                console.log('Testing English chapters...');
+                const englishChapters = getAvailableChapterIds('en');
+                console.log('Available English chapters:', englishChapters);
+                
+                // Test Arabic chapters
+                console.log('Testing Arabic chapters...');
+                const arabicChapters = getAvailableChapterIds('ar');
+                console.log('Available Arabic chapters:', arabicChapters);
+                
+                // Test specific chapter content
+                const chapter1En = getChapterContent(1, 'en');
+                const chapter1Ar = getChapterContent(1, 'ar');
+                
+                console.log('Chapter 1 English:', chapter1En ? 'Found' : 'Not found');
+                console.log('Chapter 1 Arabic:', chapter1Ar ? 'Found' : 'Not found');
+                
+                // Test chapter existence
+                console.log('Chapter 1 exists in English:', chapterExists(1, 'en'));
+                console.log('Chapter 1 exists in Arabic:', chapterExists(1, 'ar'));
+                console.log('Chapter 999 exists in English:', chapterExists(999, 'en'));
+                
+                // Display results
+                resultsDiv.innerHTML = `
+                    <h2>Test Results:</h2>
+                    <p><strong>Available English chapters:</strong> ${englishChapters.join(', ')}</p>
+                    <p><strong>Available Arabic chapters:</strong> ${arabicChapters.join(', ')}</p>
+                    <p><strong>Chapter 1 English:</strong> ${chapter1En ? '✓ Found' : '✗ Not found'}</p>
+                    <p><strong>Chapter 1 Arabic:</strong> ${chapter1Ar ? '✓ Found' : '✗ Not found'}</p>
+                    <p><strong>Chapter 1 exists in English:</strong> ${chapterExists(1, 'en') ? '✓ Yes' : '✗ No'}</p>
+                    <p><strong>Chapter 1 exists in Arabic:</strong> ${chapterExists(1, 'ar') ? '✓ Yes' : '✗ No'}</p>
+                    <p><strong>Chapter 999 exists in English:</strong> ${chapterExists(999, 'en') ? '✓ Yes' : '✗ No'}</p>
+                `;
+                
+                console.log('✅ All tests completed successfully!');
+                
+            } catch (error) {
+                console.error('❌ Test failed:', error);
+                resultsDiv.innerHTML = `<p style="color: red;">Test failed: ${error.message}</p>`;
+            }
+        }
+        
+        // Run the test
+        testChapterStructure();
+    </script>
+</body>
+</html> 
