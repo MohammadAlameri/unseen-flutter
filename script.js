@@ -502,6 +502,7 @@ function parseMarkdown(markdown) {
                '<div style="background: ' + headerBg + '; color: ' + headerColor + '; padding: 8px 15px; border-radius: 8px 8px 0 0; margin: -20px -20px 15px -20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">' + lang + '</div>' +
                '<pre style="margin: 0; font-family: \'Fira Code\', \'Consolas\', \'Monaco\', \'Courier New\', monospace; font-size: 0.9rem; line-height: 1.6; color: ' + textColor + '; direction: ltr; text-align: left;"><code>' + cleanCode + '</code></pre>' +
                '</div>';
+
                
     });
     
